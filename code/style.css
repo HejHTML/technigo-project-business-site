@@ -90,8 +90,9 @@ h2 {
 .order form {
   background: white;
   padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: 5px solid rgb(206, 157, 157);
+  box-shadow: #0000001a 5px 5px;
   display: flex;
   flex-direction: column;
 }
@@ -109,6 +110,13 @@ h2 {
   border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 15px;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
 .order button {
@@ -132,7 +140,7 @@ footer {
 }
 
 
-@media (max-width: 600px) {
+@media (min-width: 667px) and (max-width:1024px) {
   .product-list {
     flex-direction: column;
     align-items: center;
@@ -143,3 +151,6 @@ footer {
     max-width: 300px;
   }
 }
+
+
+@media (min-width: 1025px) {}

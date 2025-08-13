@@ -63,7 +63,7 @@
           <option value="" disabled selected>Välj kurs</option>
           <option value="MI">Motiverande samtal - steg 1</option>
           <option value="Kasamdialogen">Kasamdialogen</option>
-          <option value="HPB">Hälsoprofilsbedöming med konditionstest</option>
+          <option value="HPB">Hälsoprofilsbedömning med konditionstest</option>
           <option value="MI-larare">Motiverande samtal för lärare och skolpersonal</option>
         </select>
 
@@ -93,6 +93,10 @@
         <label for="email">E-post</label>
         <input type="email" id="email" name="email" placeholder="din@epost.se" required />
         <label for="email">Hör av dig med fakturauppgifter om ditt företag ska betala för kursen.</label>
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms" class="checkbox-label">Jag godkänner att mina uppgifter sparas.</label>
+        </div>
         <button type="submit">Boka</button>
 
       </form>
