@@ -1,5 +1,145 @@
-/* After you've linked the CSS file in the HTML,
-this should turn the background blue ;) */
 body {
-  background: blue;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4e0b8;
+  color: #333;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+}
+
+.hero-image {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  display: block;
+}
+
+header.hero {
+  color: white;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+header.hero h1 {
+  margin: 0 0 8px 0;
+  font-size: 45px;
+  padding-top: 40px;
+}
+
+header.hero p {
+  margin: 0;
+  font-size: 25px;
+}
+
+main {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 15px;
+
+}
+
+.products {
+  padding-bottom: 30px;
+  padding-bottom: 40px;
+  text-align: center;
+
+}
+
+h2 {
+  padding-bottom: 30px;
+}
+
+.product-list {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  position: relative;
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  padding-bottom: 40px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.product:hover {
+  background-color: rgb(226, 206, 199);
+}
+
+.product img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.order form {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.order label {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.order input,
+.order select,
+.order button {
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.order button {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  margin-top: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.order button:hover {
+  background-color: darkblue;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 15px;
+  color: #666;
+}
+
+
+@media (max-width: 600px) {
+  .product-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product {
+    width: 100%;
+    max-width: 300px;
+  }
 }

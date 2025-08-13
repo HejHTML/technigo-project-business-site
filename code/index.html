@@ -1,19 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="sv">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Business Site</title>
-  <!-- Don't forget to link the CSS file here! -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Samtalskurser
+  </title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <h1>Business name 🌻</h1>
-  <button>Help!</button>
-  <!-- Video or image as a header is cool :) -->
 
-  <!-- Signup form -->
+  <header class="hero">
+    <img src="assets/head.jpg" class="hero-image" alt="hero-image">
+    <h1>Hälsosamma samtal</h1>
+    <p>Dags att ta dina samtal till en ny nivå?</p>
+  </header>
+
+  <main>
+    <section class="products">
+      <h2>Välj en kurs som passar dig!</h2>
+      <div class="product-list">
+
+        <article class="product">
+          <img src="assets/MI.png" alt="MI" />
+          <h3>Motiverande samtal (MI) - steg 1</h3>
+          <p class="price">2099 kr</p>
+          <p class="info">Läs mer</p>
+        </article>
+
+        <article class="product">
+          <img src="assets/kasam.png" alt="Kasamdialogen" />
+          <h3>Kasamdialogen</h3>
+          <p class="price">2099 kr</p>
+          <p class="info">Läs mer</p>
+        </article>
+
+        <article class="product">
+          <img src="assets/hpb.jpg" alt="HPB" />
+          <h3>Hälsoprofilsbedöming med konditionstest</h3>
+          <p class="price">4099 kr</p>
+          <p class="info">Läs mer</p>
+        </article>
+
+        <article class="product">
+          <img src="assets/teach.jpg" alt="MI-larare" />
+          <h3>Motiverande samtal för lärare och skolpersonal</h3>
+          <p class="price">4099 kr</p>
+          <p class="info">Läs mer</p>
+        </article>
+
+
+      </div>
+    </section>
+
+    <section class="order">
+      <h2>Boka kurs</h2>
+      <form action="https://httpbin.org/anything" method="post">
+
+        <label for="product">Välj kurs</label>
+        <select name="product" id="product" required>
+          <option value="" disabled selected>Välj kurs</option>
+          <option value="MI">Motiverande samtal - steg 1</option>
+          <option value="Kasamdialogen">Kasamdialogen</option>
+          <option value="HPB">Hälsoprofilsbedöming med konditionstest</option>
+          <option value="MI-larare">Motiverande samtal för lärare och skolpersonal</option>
+        </select>
+
+        <label for="size">Lunchval</label>
+        <select name="lunch" id="lunch" required>
+          <option value="" disabled selected>Lunchval</option>
+          <option value="Ingen-lunch">Egen lunch</option>
+          <option value="Blandkost">Blandkost</option>
+          <option value="Vegetariskt">Vegetariskt</option>
+          <option value="Veganskt">Veganskt</option>
+        </select>
+
+
+        <label for="name">För- och efternamn</label>
+        <input type="text" id="name" name="name" placeholder="Ditt namn" required />
+
+        <label for="address">Adress</label>
+        <input type="text" id="address" name="address" placeholder="Gatuadress" required />
+
+        <label for="postalcode">Postnummer</label>
+        <input type="text" id="postalcode" name="postalcode" placeholder="12345" pattern="\d{5}"
+          title="Postnumret måste vara 5 siffror" required />
+
+        <label for="city">Postort</label>
+        <input type="text" id="city" name="city" placeholder="Postort" required />
+
+        <label for="email">E-post</label>
+        <input type="email" id="email" name="email" placeholder="din@epost.se" required />
+        <label for="email">Hör av dig med fakturauppgifter om ditt företag ska betala för kursen.</label>
+        <button type="submit">Boka</button>
+
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Hälsosamma samtal.</p>
+  </footer>
 
 </body>
 
