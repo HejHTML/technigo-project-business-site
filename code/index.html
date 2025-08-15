@@ -9,9 +9,9 @@
 </head>
 
 <body>
-  <!-- Header / Hero -->
+  <!-- Hero sektion med header och navigering -->
   <header class="hero">
-    <img src="assets/head.jpg" class="hero-image" alt="Hälsosamma samtal">
+    <img src="assets/head.jpg" class="hero-image" alt="Hero-bild">
     <h1>Hälsosamma samtal</h1>
     <p>Salutogena metoder för samtalsledare och coacher</p>
 
@@ -22,52 +22,48 @@
       <span></span>
     </div>
 
-    <!-- Meny -->
+    <!-- Popup-meny -->
     <nav id="nav-links" class="nav-links">
       <a href="#">Hem</a>
-      <a href="#">Om oss</a>
-      <a href="#">Kurser</a>
+      <a href="#">Produkter</a>
+      <a href="#">Order</a>
       <a href="#">Kontakt</a>
     </nav>
   </header>
 
-  <!-- Main -->
+  <!-- Produkter: Höstens kurser -->
   <main>
-    <!-- Produkter -->
     <section class="products">
       <h2>Höstens kurser</h2>
       <div class="product-list">
         <a href="#" class="product">
-          <img src="assets/MI.png" alt="Motiverande samtal steg 1" />
+          <img src="assets/MI.png" alt="MI" />
           <h3>Motiverande samtal (MI)<br> Steg 1</h3>
           <p class="price">2099 kr</p>
-          <span class="product-info-icon">Läs mer</span>
+          <p class="info">Läs mer</p>
         </a>
-
         <a href="#" class="product">
           <img src="assets/kasam.png" alt="Kasamdialogen" />
           <h3>Kasamdialogen<br> Salutogena samtal</h3>
           <p class="price">2099 kr</p>
-          <span class="product-info-icon">Läs mer</span>
+          <p class="info">Läs mer</p>
         </a>
-
         <a href="#" class="product">
-          <img src="assets/hpb.png" alt="Hälsoprofilsbedömning med konditionstest" />
+          <img src="assets/hpb.png" alt="HPB" />
           <h3>Hälsoprofilsbedömning med konditionstest</h3>
           <p class="price">4099 kr</p>
-          <span class="product-info-icon">Läs mer</span>
+          <p class="info">Läs mer</p>
         </a>
-
         <a href="#" class="product">
-          <img src="assets/teach.png" alt="Motiverande samtal för lärare" />
+          <img src="assets/teach.png" alt="MI-lärare" />
           <h3>Motiverande samtal för lärare och skolpersonal</h3>
           <p class="price">4099 kr</p>
-          <span class="product-info-icon">Läs mer</span>
+          <p class="info">Läs mer</p>
         </a>
       </div>
     </section>
 
-    <!-- Orderform -->
+    <!-- Orderformulär -->
     <section class="order">
       <h2>Boka din kurs</h2>
       <form action="https://httpbin.org/anything" method="post">
@@ -105,7 +101,7 @@
         <label for="email">E-post</label>
         <input type="email" id="email" name="email" placeholder="din@epost.se" required />
 
-        <p>Hör av dig med fakturauppgifter om ditt företag ska betala för kursen.</p>
+        <label for="company">Hör av dig med fakturauppgifter om ditt företag ska betala för kursen.</label>
 
         <div class="checkbox-wrapper">
           <input type="checkbox" id="terms" name="terms" required>
@@ -122,15 +118,17 @@
     <p>© 2025 Hälsosamma samtal.</p>
   </footer>
 
-  <!-- Hamburger JS -->
+  <!-- JavaScript för hamburger-meny -->
   <script>
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
 
-    hamburger.addEventListener('click', () => {
+    const toggleMenu = () => {
       navLinks.classList.toggle('active');
       hamburger.classList.toggle('active');
-    });
+    };
+
+    hamburger.addEventListener('click', toggleMenu);
   </script>
 </body>
 

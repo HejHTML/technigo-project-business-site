@@ -45,7 +45,7 @@ h3 {
   object-fit: cover;
 }
 
-/* Hamburgerikon */
+/* --- Hamburgerikon --- */
 .hamburger {
   position: absolute;
   top: 20px;
@@ -79,7 +79,7 @@ h3 {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Popup-meny */
+/* --- Popup-meny --- */
 .nav-links {
   position: absolute;
   top: 60px;
@@ -114,7 +114,6 @@ h3 {
   gap: 20px;
 }
 
-/* Produktkort */
 .product {
   display: block;
   position: relative;
@@ -144,30 +143,16 @@ h3 {
   font-weight: bold;
 }
 
+/* --- Info-text: Läs mer --- */
 .info {
   margin-top: 5px;
   color: var(--color-primary);
   font-weight: bold;
   cursor: pointer;
   transition: color var(--transition-speed) ease;
-  text-decoration: none;
-  /* Se till att ingen ikon eller understrykning stör */
 }
 
 .info:hover {
-  color: var(--color-primary-hover);
-  text-decoration: underline;
-}
-
-.product-info-icon {
-  display: inline-block;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.2s ease, color var(--transition-speed) ease;
-}
-
-.product-info-icon:hover {
-  transform: scale(1.2);
   color: var(--color-primary-hover);
 }
 
