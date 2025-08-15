@@ -201,9 +201,11 @@ h3 {
 }
 
 .order button {
+  display: block;
+  /* behövs när text-align används */
+  margin: 20px auto 0 auto;
   background-color: var(--color-primary);
-  padding: 10px;
-  margin-top: 15px;
+  padding: 10px 20px;
   border-radius: 5px;
   color: white;
   cursor: pointer;
