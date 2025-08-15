@@ -9,51 +9,65 @@
 </head>
 
 <body>
-
+  <!-- Header / Hero -->
   <header class="hero">
-    <img src="assets/head.jpg" class="hero-image" alt="hero-image">
+    <img src="assets/head.jpg" class="hero-image" alt="Hälsosamma samtal">
     <h1>Hälsosamma samtal</h1>
     <p>Salutogena metoder för samtalsledare och coacher</p>
+
+    <!-- Hamburgerikon -->
+    <div id="hamburger" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Meny -->
+    <nav id="nav-links" class="nav-links">
+      <a href="#">Hem</a>
+      <a href="#">Om oss</a>
+      <a href="#">Kurser</a>
+      <a href="#">Kontakt</a>
+    </nav>
   </header>
 
+  <!-- Main -->
   <main>
+    <!-- Produkter -->
     <section class="products">
       <h2>Höstens kurser</h2>
       <div class="product-list">
-
-        <a href="https://utbildning.ki.se/uppdragsutbildning/kursutbud/kompetensutveckling-i-motiverande-samtal-mi"
-          class="product" target="_blank">
-          <img src="assets/MI.png" alt="MI" />
+        <a href="#" class="product">
+          <img src="assets/MI.png" alt="Motiverande samtal steg 1" />
           <h3>Motiverande samtal (MI)<br> Steg 1</h3>
           <p class="price">2099 kr</p>
-          <p class="info">Läs mer</p>
+          <span class="product-info-icon">Läs mer</span>
         </a>
 
-        <a href="https://www.kasamdialogen.se/" class="product" target="_blank">
+        <a href="#" class="product">
           <img src="assets/kasam.png" alt="Kasamdialogen" />
           <h3>Kasamdialogen<br> Salutogena samtal</h3>
           <p class="price">2099 kr</p>
-          <p class="info">Läs mer</p>
+          <span class="product-info-icon">Läs mer</span>
         </a>
 
-        <a href="https://support.hpinordic.se/support/home" class="product" target="_blank">
-          <img src="assets/hpb.png" alt="HPB" />
-          <h3>Hälsoprofilsbedöming med konditionstest</h3>
+        <a href="#" class="product">
+          <img src="assets/hpb.png" alt="Hälsoprofilsbedömning med konditionstest" />
+          <h3>Hälsoprofilsbedömning med konditionstest</h3>
           <p class="price">4099 kr</p>
-          <p class="info">Läs mer</p>
+          <span class="product-info-icon">Läs mer</span>
         </a>
 
-        <a href="https://www.adlibris.com/sv/bok/mi-motiverande-samtal-praktisk-handbok-for-skolan-9789177414094?utm_source=google&utm_medium=cpc&utm_campaign=BOK+-+Search+-+Generic+-+DSA&gad_source=1&gad_campaignid=60725283&gbraid=0AAAAAD_BAOf_OcxRrhd583SE0jH6eb3KE&gclid=CjwKCAjwtfvEBhAmEiwA-DsKjl2_jIHmzAQFAINZTb0G1YtnwbT32VyWJJkdObYZ3o0dgN8Mc5DmEBoCG3kQAvD_BwE"
-          class="product" target="_blank">
-          <img src="assets/teach.png" alt="MI-larare" />
+        <a href="#" class="product">
+          <img src="assets/teach.png" alt="Motiverande samtal för lärare" />
           <h3>Motiverande samtal för lärare och skolpersonal</h3>
           <p class="price">4099 kr</p>
-          <p class="info">Läs mer</p>
+          <span class="product-info-icon">Läs mer</span>
         </a>
-
       </div>
     </section>
 
+    <!-- Orderform -->
     <section class="order">
       <h2>Boka din kurs</h2>
       <form action="https://httpbin.org/anything" method="post">
@@ -66,7 +80,7 @@
           <option value="MI-larare">Motiverande samtal för lärare och skolpersonal</option>
         </select>
 
-        <label for="size">Lunchval</label>
+        <label for="lunch">Lunchval</label>
         <select name="lunch" id="lunch" required>
           <option value="" disabled selected>Lunchval</option>
           <option value="Ingen-lunch">Egen lunch</option>
@@ -90,21 +104,34 @@
 
         <label for="email">E-post</label>
         <input type="email" id="email" name="email" placeholder="din@epost.se" required />
-        <label for="email">Hör av dig med fakturauppgifter om ditt företag ska betala för kursen.</label>
+
+        <p>Hör av dig med fakturauppgifter om ditt företag ska betala för kursen.</p>
+
         <div class="checkbox-wrapper">
           <input type="checkbox" id="terms" name="terms" required>
           <label for="terms" class="checkbox-label">Jag godkänner att mina uppgifter sparas.</label>
         </div>
-        <button type="submit">Boka</button>
 
+        <button type="submit">Boka</button>
       </form>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>© 2025 Hälsosamma samtal.</p>
   </footer>
 
+  <!-- Hamburger JS -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+  </script>
 </body>
 
 </html>
