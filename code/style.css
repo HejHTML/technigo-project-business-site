@@ -1,3 +1,17 @@
+/* --- Variabler --- */
+:root {
+  --color-bg: #f5f5f5;
+  --color-text: #333;
+  --color-primary: #3a93d3;
+  --color-primary-hover: #0077cc;
+  --color-border: #7f5454;
+  --color-hover-bg: #e5dcd9;
+  --color-footer-bg: #e2e2e2;
+  --border-radius: 10px;
+  --card-padding: 20px;
+  --transition-speed: 0.3s;
+}
+
 /* --- Grundinställningar --- */
 * {
   box-sizing: border-box;
@@ -7,16 +21,15 @@
 }
 
 body {
-  background: #f5f5f5;
-  color: #333;
+  background: var(--color-bg);
+  color: var(--color-text);
   line-height: 1.5;
 }
 
 h1,
 h2,
 h3 {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px 0;
   text-align: center;
 }
 
@@ -25,7 +38,7 @@ h3 {
   position: relative;
   text-align: center;
   overflow: hidden;
-  background-color: #f5f5f5;
+  background-color: var(--color-bg);
 }
 
 .hero img.hero-image {
@@ -40,29 +53,30 @@ h3 {
   padding: 40px 20px;
 }
 
-/* Standard: mobil (1 kolumn) */
+/* Produktlista: grid */
 .product-list {
   display: grid;
   grid-template-columns: 1fr;
+  /* Mobil: 1 kolumn */
   gap: 20px;
 }
 
-/* Kort */
+/* --- Produktkort --- */
 .product {
   display: block;
   position: relative;
   background: white;
-  border-radius: 10px;
-  padding: 20px;
+  border-radius: var(--border-radius);
+  padding: var(--card-padding);
   text-align: center;
   text-decoration: none;
   color: inherit;
-  transition: background-color 0.3s ease;
+  transition: background-color var(--transition-speed) ease;
 }
 
 .product:hover {
-  background-color: #e5dcd9;
-  border: solid 0.5px #7f5454;
+  background-color: var(--color-hover-bg);
+  border: 0.5px solid var(--color-border);
 }
 
 .product img {
@@ -77,26 +91,26 @@ h3 {
   font-weight: bold;
 }
 
-.info {
+.product-info-icon {
   display: inline-block;
   font-weight: bold;
   cursor: pointer;
-  transition: transform 0.2s ease, color 0.3s ease;
+  transition: transform 0.2s ease, color var(--transition-speed) ease;
 }
 
-.info:hover {
+.product-info-icon:hover {
   transform: scale(1.2);
-  color: #0077cc;
+  color: var(--color-primary-hover);
 }
 
 /* --- Orderform --- */
 .order {
   padding: 40px 20px;
   background: #fff;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   max-width: 600px;
   margin: 40px auto;
-  border: 2px solid #7f5454;
+  border: 2px solid var(--color-border);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -107,8 +121,7 @@ h3 {
 
 .order label {
   display: block;
-  margin-top: 15px;
-  margin-bottom: 5px;
+  margin: 15px 0 5px 0;
 }
 
 .order input,
@@ -137,30 +150,31 @@ h3 {
 }
 
 .order button {
-  background-color: #3a93d3;
+  background-color: var(--color-primary);
   padding: 10px;
   margin-top: 15px;
   border-radius: 5px;
   color: white;
   cursor: pointer;
   border: none;
+  transition: background-color var(--transition-speed) ease;
 }
 
 .order button:hover {
-  background-color: #0077cc;
+  background-color: var(--color-primary-hover);
 }
 
+/* --- Footer --- */
 footer {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 20px;
-  background: #e2e2e2;
+  background: var(--color-footer-bg);
 }
 
 /* --- Responsiv grid för produkter --- */
-
 /* Tablet (iPad): 2 kolumner */
 @media (min-width: 768px) and (max-width: 1024px) {
   .product-list {
@@ -168,6 +182,7 @@ footer {
   }
 }
 
+/* Större skärmar: 4 kolumner */
 @media (min-width: 1025px) {
   .product-list {
     grid-template-columns: repeat(4, 1fr);
