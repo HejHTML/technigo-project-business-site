@@ -1,10 +1,18 @@
+/* === Grundinställningar === */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f4e0b8;
+  background: #eae9e5;
   color: #333;
 }
 
+h2 {
+  text-align: center;
+  padding-bottom: 20px;
+
+}
+
+/* === Hero-sektion === */
 .hero {
   position: relative;
   text-align: center;
@@ -14,19 +22,20 @@ body {
   width: 100%;
   height: 70vh;
   object-fit: cover;
+  border-radius: 0 5px 5px 0;
   display: block;
 }
 
 header.hero {
-  color: white;
+  color: #a77474;
   padding-bottom: 40px;
-  text-align: center;
 }
 
 header.hero h1 {
-  margin: 0 0 8px 0;
+  margin: 0 0 8px;
   font-size: 45px;
   padding-top: 40px;
+  text-shadow: 1px 1px #2f2828;
 }
 
 header.hero p {
@@ -34,52 +43,40 @@ header.hero p {
   font-size: 25px;
 }
 
+/* === Huvudinnehåll === */
 main {
-  max-width: 900px;
+  max-width: 1600px;
   margin: 30px auto;
   padding: 0 15px;
-
 }
 
 .products {
-  padding-bottom: 30px;
   padding-bottom: 40px;
   text-align: center;
-
 }
 
-h2 {
-  padding-bottom: 30px;
-}
-
+/* === Produktlistan (Grid-layout) === */
 .product-list {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
+  /* Mobil: 1 kolumn */
   gap: 15px;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 .product {
   position: relative;
   background: white;
   border-radius: 10px;
-  padding: 15px;
-  padding-bottom: 40px;
-  width: 200px;
+  padding: 15px 15px 40px;
   text-align: center;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-}
-
-.info {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  font-weight: bold;
-  text-align: right;
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
 .product:hover {
+  transform: scale(1.03);
+  /* Liten zoom */
   background-color: rgb(226, 206, 199);
+  border: 2px solid #ce9d9d;
 }
 
 .product img {
@@ -87,14 +84,25 @@ h2 {
   border-radius: 4px;
 }
 
+.info {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-weight: bold;
+}
+
+/* === Orderformulär === */
 .order form {
   background: white;
   padding: 25px;
   border-radius: 10px;
   border: 5px solid rgb(206, 157, 157);
-  box-shadow: #0000001a 5px 5px;
+  box-shadow: 5px 5px #0000001a;
   display: flex;
   flex-direction: column;
+  max-width: 500px;
+  /* Begränsad bredd även på stor skärm */
+  margin: 0 auto;
 }
 
 .order label {
@@ -132,6 +140,7 @@ h2 {
   background-color: darkblue;
 }
 
+/* === Footer === */
 footer {
   text-align: center;
   padding: 15px;
@@ -139,18 +148,19 @@ footer {
   color: #666;
 }
 
+/* === Responsiva inställningar === */
+@media (min-width: 668px) and (max-width: 1024px) {
 
-@media (min-width: 667px) and (max-width:1024px) {
+  /* iPad: 2 kolumner */
   .product-list {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .product {
-    width: 100%;
-    max-width: 300px;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
+@media (min-width: 1025px) {
 
-@media (min-width: 1025px) {}
+  /* Stor skärm: 4 kolumner */
+  .product-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
